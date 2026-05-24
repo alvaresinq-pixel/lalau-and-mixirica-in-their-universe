@@ -2702,7 +2702,7 @@ updateLoveTimer();
 </div>
 
 <audio id="albumMusic" loop playsinline>
-  <source src="songs/Milky - Just The Way You Are (sub. español + lyrics)  Pibble Song - Marinosaurio (youtube).mp3" type="audio/mp3">
+  <source src="songs/pible-music.mp3">
 </audio>
 
 <script>
@@ -2719,7 +2719,7 @@ document.getElementById("closeAlbum");
 const albumMusic =
 document.getElementById("albumMusic");
 
-albumBtn.addEventListener("click", async ()=>{
+albumBtn.addEventListener("click", ()=>{
 
   /* abre álbum */
   albumOverlay.classList.add("show");
@@ -2728,22 +2728,22 @@ albumBtn.addEventListener("click", async ()=>{
   audio.pause();
 
   document
-  .getElementById("playBtn")
-  .innerHTML = "▶";
+    .getElementById("playBtn")
+    .innerHTML = "▶";
 
   snoopyDance.style.opacity = "0";
   snoopyDanceLeft.style.opacity = "0";
 
-  /* força música do álbum */
-  try{
+  /* toca música do álbum */
+  albumMusic.currentTime = 0;
 
-    albumMusic.currentTime = 0;
+  const playPromise = albumMusic.play();
 
-    await albumMusic.play();
+  if(playPromise !== undefined){
 
-  }catch(err){
-
-    console.log(err);
+    playPromise.catch(err=>{
+      console.log(err);
+    });
 
   }
 
