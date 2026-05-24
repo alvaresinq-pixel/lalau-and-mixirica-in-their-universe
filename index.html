@@ -1,0 +1,2768 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Lauanda & Pedro ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+  html{
+  scroll-behavior:smooth;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Fredoka', sans-serif;
+  background:
+  radial-gradient(circle at top,#2d1b69 0%,#0f1020 40%,#080810 100%);
+  overflow-x:hidden;
+  color:white;
+  min-height:100vh;
+  position:relative;
+}
+
+/* estrelas */
+
+.stars{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  overflow:hidden;
+  z-index:0;
+}
+
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:.6;
+  animation:blink 3s infinite;
+}
+
+@keyframes blink{
+  0%,100%{
+    opacity:.2;
+  }
+
+  50%{
+    opacity:1;
+  }
+}
+
+/* topo */
+
+.hero{
+  position:relative;
+  z-index:2;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px 20px;
+}
+
+.hero-content{
+  text-align:center;
+  max-width:900px;
+}
+
+.title{
+  font-size:clamp(3rem,8vw,7rem);
+  margin-bottom:20px;
+  text-shadow:0 0 25px rgba(255,255,255,.25);
+}
+
+.subtitle{
+  font-size:1.3rem;
+  color:#ffe9f2;
+  line-height:1.8;
+  margin-bottom:40px;
+}
+
+/* botão */
+
+.main-btn{
+  border:none;
+  background:#ff7eb6;
+  color:white;
+  padding:18px 40px;
+  border-radius:50px;
+  font-size:1rem;
+  cursor:pointer;
+  transition:.4s;
+  font-family:'Fredoka', sans-serif;
+  box-shadow:0 0 25px rgba(255,126,182,.35);
+}
+
+.main-btn:hover{
+  transform:scale(1.08) rotate(-2deg);
+}
+
+/* player */
+
+.music-player{
+  margin-top:35px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(6px);
+  padding:20px;
+  border-radius:30px;
+}
+
+.music-title{
+  margin-bottom:15px;
+  font-size:1.1rem;
+}
+
+.music-controls{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+
+.music-controls button{
+  border:none;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  cursor:pointer;
+  background:white;
+  font-size:1rem;
+
+  transition:.3s;
+}
+
+.music-controls button:hover{
+  transform:scale(1.12);
+}
+
+.love-message-section{
+  position:relative;
+  z-index:2;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  gap:25px;
+
+  padding:40px 20px 120px;
+}
+
+.love-snoopy{
+  width:170px;
+
+  filter:
+  drop-shadow(0 0 20px rgba(255,255,255,.25));
+}
+
+#typingText{
+  font-size:2.3rem;
+
+  color:white;
+
+  text-align:center;
+
+  text-shadow:0 0 20px rgba(255,255,255,.25);
+
+  min-height:70px;
+
+  max-width:900px;
+
+  line-height:1.5;
+}
+
+/* scrapbook */
+
+.scrapbook{
+  position:relative;
+  z-index:2;
+  padding:100px 20px;
+}
+
+.section-title{
+  text-align:center;
+  font-size:3rem;
+  margin-bottom:70px;
+}
+
+.photos{
+  display:flex;
+
+  gap:40px;
+
+  overflow-x:auto;
+  overflow-y:hidden;
+
+  scroll-behavior:smooth;
+
+  padding:40px 140px;
+
+  align-items:flex-start;
+
+  scrollbar-width:none;
+
+  flex-wrap:nowrap;
+
+}
+
+.photos::-webkit-scrollbar{
+  display:none;
+}
+  
+
+.polaroid{
+  width:220px;
+  min-width:220px;
+
+  background:white;
+
+  padding:
+  12px
+  12px
+  70px;
+
+  color:black;
+
+  border-radius:6px;
+
+  box-shadow:0 10px 35px rgba(0,0,0,.35);
+
+  position:relative;
+
+  transition:.4s;
+
+  cursor:pointer;
+
+  flex-shrink:0;
+
+  transform-origin:center;
+}
+
+.polaroid:hover{
+  transform:scale(1.05) rotate(0deg) !important;
+}
+
+.polaroid img{
+  width:100%;
+  height:270px;
+
+  object-fit:cover;
+
+  border:1px solid #ddd;
+
+  transition:.4s;
+}
+
+.caption{
+  margin-top:18px;
+
+  text-align:center;
+
+  font-size:1.35rem;
+
+  line-height:1.4;
+
+  font-weight:500;
+
+  letter-spacing:.5px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  min-height:70px;
+
+}
+
+.polaroid:hover img{
+  transform:scale(1.06);
+}
+
+.rotate-left{
+  transform:rotate(-6deg);
+}
+
+.rotate-right{
+  transform:rotate(5deg);
+}
+
+/* timeline */
+
+.timeline{
+  position:relative;
+  z-index:2;
+  padding:120px 20px;
+}
+
+.timeline-container{
+  max-width:800px;
+  margin:auto;
+  position:relative;
+}
+
+.timeline-container::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  width:4px;
+  height:100%;
+  background:rgba(255,255,255,.2);
+  transform:translateX(-50%);
+}
+
+.timeline-item{
+  width:50%;
+  padding:30px;
+  position:relative;
+}
+
+.timeline-item:nth-child(odd){
+  left:0;
+  text-align:right;
+}
+
+.timeline-item:nth-child(even){
+  left:50%;
+}
+
+.timeline-card{
+  background:rgba(255,255,255,.08);
+  padding:25px;
+  border-radius:25px;
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.1);
+  text-align: center;
+}
+
+.timeline-date{
+  color:#ffb3d1;
+  margin-bottom:10px;
+  font-size:1.1rem;
+}
+
+/* nasa */
+
+.nasa-section{
+  position:relative;
+  z-index:2;
+  padding:120px 20px;
+  text-align:center;
+}
+
+.nasa-card{
+  max-width:900px;
+  margin:auto;
+  background:rgba(255,255,255,.08);
+  border-radius:30px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.nasa-card img{
+  width:100%;
+  max-height:500px;
+  object-fit:cover;
+}
+
+.nasa-content{
+  padding:30px;
+}
+
+.nasa-content h2{
+  margin-bottom:15px;
+}
+
+#spaceMeaning{
+  margin-top:25px;
+  line-height:1.8;
+  color:#ffd9e8;
+  font-size:1rem;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* footer */
+
+.footer{
+  position:relative;
+  z-index:2;
+  padding:100px 20px;
+  text-align:center;
+}
+
+.footer h2{
+  font-size:2.5rem;
+  margin-bottom:20px;
+}
+
+.footer p{
+  font-size:1.2rem;
+  color:#ffdbe9;
+}
+
+.nasa-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  margin-bottom:40px;
+}
+
+.nasa-buttons button{
+  border:none;
+  background:#ff7eb6;
+  color:white;
+  padding:12px 22px;
+  border-radius:30px;
+  cursor:pointer;
+  transition:.3s;
+  font-family:'Fredoka', sans-serif;
+}
+
+.nasa-buttons button:hover{
+  transform:scale(1.08);
+}
+
+.scrapbook-wrapper{
+  position:relative;
+  max-width:1500px;
+  margin:auto;
+overflow-x:hidden;
+overflow-y:visible;
+}
+
+.scroll-btn{
+  position:absolute;
+
+  top:50%;
+  transform:translateY(-50%);
+
+  z-index:999;
+
+  width:70px;
+  height:70px;
+
+  border:none;
+  border-radius:50%;
+
+  background:rgba(255,255,255,.12);
+
+  backdrop-filter:blur(10px);
+
+  color:white;
+
+  font-size:2rem;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+  pointer-events:auto;
+}
+
+.scroll-btn:hover{
+  transform:translateY(-50%) scale(1.08);
+  background:rgba(255,255,255,.2);
+}
+
+.left-btn{
+  left:10px;
+}
+
+.right-btn{
+  right:10px;
+}
+
+#snoopyDance{
+  position:fixed;
+
+  bottom:20px;
+  right:20px;
+
+  width:115px;
+
+  z-index:9999;
+
+
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:.4s;
+
+  transform:
+  translateY(20px)
+  scale(.8);
+}
+
+#snoopyDance.show{
+  opacity:1;
+
+  transform:
+  translateY(0)
+  scale(1);
+}
+
+#snoopyDanceLeft{
+  position:fixed;
+
+  left:25px;
+  bottom:20px;
+
+  width:115px;
+
+  z-index:999;
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:.4s;
+}
+
+#topSnoopy{
+  position:fixed;
+
+  top:20px;
+  left:20px;
+
+  width:140px;
+
+  z-index:999;
+
+  pointer-events:none;
+
+  filter:
+  drop-shadow(0 0 15px rgba(255,255,255,.2));
+
+  animation:
+  floatTop 4s ease-in-out infinite;
+}
+
+@keyframes floatTop{
+
+  0%,100%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+}
+
+#sleepSnoopy{
+  position:fixed;
+
+  top:20px;
+  right:20px;
+
+  width:75px;
+
+  z-index:999;
+
+  pointer-events:none;
+
+  filter:
+  drop-shadow(0 0 15px rgba(255,255,255,.18));
+
+  animation:
+  sleepFloat 5s ease-in-out infinite;
+}
+
+@keyframes sleepFloat{
+
+  0%,100%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(8px);
+  }
+
+}
+
+/* responsivo */
+
+@media(max-width:768px){
+
+  .timeline-container::before{
+    left:20px;
+  }
+
+  .timeline-item{
+    width:100%;
+    left:0 !important;
+    padding-left:60px;
+    text-align:left !important;
+  }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:768px){
+
+  /* hero */
+
+ .hero{
+  min-height:auto;
+  padding:60px 20px 40px;
+}
+
+  .title{
+  font-size:clamp(2.8rem,12vw,4rem);
+}
+
+  .subtitle{
+    font-size:1.05rem;
+    line-height:1.8;
+    padding:0 10px;
+  }
+
+  .main-btn{
+    width:100%;
+    max-width:420px;
+
+    padding:18px 25px;
+
+    font-size:1rem;
+  }
+
+  /* player */
+
+  .music-player{
+    padding:22px;
+    border-radius:28px;
+  }
+
+  .music-title{
+    font-size:1rem;
+    line-height:1.5;
+  }
+
+  .music-controls{
+    gap:14px;
+  }
+
+  .music-controls button{
+    width:52px;
+    height:52px;
+    font-size:1.1rem;
+  }
+
+  /* love section */
+
+  .love-message-section{
+    padding:20px 20px 90px;
+  }
+
+  .love-snoopy{
+    width:95px;
+  }
+
+  #typingText{
+    font-size:1.2rem;
+    line-height:1.6;
+    padding:0 10px;
+  }
+
+  /* scrapbook */
+
+  .scrapbook{
+    padding:70px 0;
+  }
+
+  .section-title{
+    font-size:2.4rem;
+    margin-bottom:45px;
+  }
+
+  .photos{
+    gap:24px;
+
+    padding:
+    30px
+    80px;
+  }
+
+  .polaroid{
+    width:180px;
+    min-width:180px;
+
+    padding:
+    10px
+    10px
+    55px;
+  }
+
+  .polaroid img{
+    height:220px;
+  }
+
+  .caption{
+    font-size:1rem;
+    min-height:55px;
+    line-height:1.4;
+  }
+
+  .scroll-btn{
+    width:58px;
+    height:58px;
+    font-size:1.5rem;
+  }
+
+  .left-btn{
+    left:5px;
+  }
+
+  .right-btn{
+    right:5px;
+  }
+
+  /* timeline */
+
+  .timeline{
+    padding:80px 20px;
+  }
+
+  .timeline-container::before{
+    left:20px;
+  }
+
+  .timeline-item{
+    width:100%;
+
+    left:0 !important;
+
+    padding-left:60px;
+    padding-right:0;
+
+    text-align:left !important;
+  }
+
+  .timeline-card{
+    text-align:left;
+    padding:22px;
+  }
+
+  /* nasa */
+
+  .nasa-section{
+    padding:80px 20px;
+  }
+
+.nasa-buttons{
+
+  gap:10px;
+
+  overflow-x:auto;
+  flex-wrap:nowrap;
+  padding-bottom:10px;
+
+  scrollbar-width:none;
+}
+
+ .nasa-buttons button{
+  width:auto;
+  max-width:none;
+
+  padding:12px 18px;
+
+  font-size:.9rem;
+
+  white-space:nowrap;
+  
+}
+
+  .nasa-card{
+    border-radius:24px;
+  }
+
+  .nasa-content{
+    padding:22px;
+  }
+
+  #spaceMeaning{
+    font-size:.95rem;
+    line-height:1.8;
+  }
+
+  /* footer */
+
+  .footer{
+    padding:80px 20px;
+  }
+
+  .footer h2{
+    font-size:2rem;
+    line-height:1.3;
+  }
+
+  .footer p{
+    font-size:1rem;
+  }
+
+  /* snoopys fixos */
+
+#topSnoopy{
+  width:70px;
+  height:70px;
+
+  object-fit:contain;
+
+  top:8px;
+  left:8px;
+}
+
+  #sleepSnoopy{
+  width:70px;
+  height:70px;
+  object-fit:contain;
+
+  }
+
+  /* snoopys musica */
+
+#snoopyDance{
+  width:90px;
+  height:90px;
+
+  object-fit:contain;
+
+  right:5px;
+  bottom:25px;
+
+  opacity:0;
+}
+
+
+#snoopyDanceLeft{
+  width:90px;
+  height:90px;
+  object-fit:contain;
+
+  }
+
+
+}
+
+.quiz-section{
+  position:relative;
+  z-index:2;
+
+  padding:120px 20px;
+
+  text-align:center;
+}
+
+.quiz-box{
+
+  position:relative;
+  
+  padding:30px 22px;
+
+  max-width:700px;
+
+  margin:auto;
+
+  background:
+  rgba(255,255,255,.08);
+
+  border:
+  1px solid rgba(255,255,255,.1);
+
+  backdrop-filter:blur(10px);
+
+  border-radius:30px;
+
+}
+
+.quiz-box h3{
+  font-size:1.4rem;
+  line-height:1.5;
+  margin-bottom:35px;
+}
+
+.quiz-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.quiz-buttons button{
+  border:none;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  background:#ff7eb6;
+
+  color:white;
+
+  font-size:1rem;
+
+  font-family:'Fredoka', sans-serif;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.quiz-buttons button:hover{
+  transform:scale(1.03);
+}
+
+#quizResult{
+  margin-top:30px;
+
+  font-size:1.3rem;
+
+  color:#ffd9ec;
+}
+
+#victorySnoopy{
+  position:fixed;
+
+  width:160px;
+
+  right:25px;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  z-index:999999;
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:.5s;
+}
+
+#victorySnoopy.show{
+  opacity:1;
+}
+
+#failSnoopy{
+  position:fixed;
+
+  width:160px;
+
+  left:25px;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  z-index:999999;
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:.5s;
+}
+
+#failSnoopy.show{
+  opacity:1;
+}
+.popup-overlay{
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(0,0,0,.7);
+
+  backdrop-filter:blur(10px);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  z-index:999999;
+
+  opacity:0;
+  pointer-events:none;
+
+  transition:.4s;
+}
+
+.popup-overlay.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.popup-box{
+  width:90%;
+  max-width:550px;
+
+  max-height:85vh;
+  overflow-y:auto;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(55,35,120,.95),
+    rgba(20,10,45,.98)
+  );
+
+  border:
+  1px solid rgba(255,255,255,.1);
+
+  border-radius:30px;
+
+  padding:35px;
+
+  color:white;
+
+  box-shadow:
+  0 0 50px rgba(140,90,255,.35);
+
+  animation:popupShow .4s ease;
+}
+
+@keyframes popupShow{
+
+  from{
+    transform:scale(.8);
+    opacity:0;
+  }
+
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+
+}
+
+.popup-box h2{
+  margin-bottom:20px;
+  font-size:2rem;
+}
+
+.popup-box p,
+.popup-box li{
+  line-height:1.7;
+  color:#f3ddff;
+}
+
+.popup-box ul{
+  padding-left:20px;
+}
+
+.popup-buttons{
+  margin-top:30px;
+
+  display:flex;
+  gap:15px;
+
+  flex-wrap:wrap;
+}
+
+.popup-buttons button{
+  flex:1;
+
+  border:none;
+
+  padding:15px;
+
+  border-radius:18px;
+
+  cursor:pointer;
+
+  font-family:'Fredoka', sans-serif;
+
+  font-size:1rem;
+
+  transition:.3s;
+
+  background:#ff7eb6;
+  color:white;
+}
+
+.popup-buttons button:hover{
+  transform:scale(1.04);
+}
+
+.love-counter{
+  text-align:center;
+
+  margin-top:40px;
+  margin-bottom:40px;
+
+  position:relative;
+  z-index:2;
+}
+
+.love-counter h2{
+  font-size:2rem;
+
+  margin-bottom:15px;
+}
+
+#loveTimer{
+  font-size:1.3rem;
+
+  color:#ffd4ec;
+
+  line-height:1.8;
+  padding:0 15px;
+}
+
+.album-button{
+
+  font-family:'Fredoka', sans-serif;
+
+  display:block;
+
+  margin:80px auto;
+
+  padding:20px 40px;
+
+  border:none;
+  outline:none;
+
+  border-radius:999px;
+
+  background:#ff72b6;
+
+  color:white;
+
+  font-size:1rem;
+  font-weight:600;
+
+  cursor:pointer;
+
+  position:relative;
+  z-index:99999;
+
+  box-shadow:
+  0 0 30px rgba(255,114,182,.45);
+
+  transition:.3s;
+
+}
+
+.album-button:hover{
+  transform:scale(1.05);
+}
+
+.album-overlay{
+
+  position:fixed;
+  inset:0;
+
+  background:
+  rgba(5,5,20,.92);
+
+  backdrop-filter:blur(8px);
+
+  z-index:999999;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  opacity:0;
+  pointer-events:none;
+
+  transition:.4s;
+}
+
+.album-overlay.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.album-content{
+
+  width:90%;
+  max-width:1100px;
+
+  max-height:90vh;
+  overflow-y:auto;
+
+  padding:40px;
+
+  border-radius:30px;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(45,25,90,.96),
+    rgba(15,10,30,.98)
+  );
+
+  text-align:center;
+}
+
+.album-content h2{
+  font-size:2.5rem;
+  margin-bottom:15px;
+}
+
+.album-content p{
+  color:#ffd4ec;
+  margin-bottom:35px;
+}
+
+.album-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+
+  gap:25px;
+}
+
+.album-photo{
+
+  background:
+  rgba(255,255,255,.08);
+
+  border-radius:25px;
+
+  padding:12px;
+
+  transform:rotate(
+    calc((var(--r) - .5) * 6deg)
+  );
+
+  transition:.3s;
+}
+
+.album-photo:hover{
+  transform:
+  scale(1.04)
+  rotate(0deg);
+}
+
+.album-photo img{
+
+  width:100%;
+  height:260px;
+
+  object-fit:cover;
+
+  border-radius:18px;
+}
+
+.close-album{
+
+  position:absolute;
+
+  top:30px;
+  right:30px;
+
+  width:50px;
+  height:50px;
+
+  border:none;
+  border-radius:50%;
+
+  background:#ff72b6;
+
+  color:white;
+
+  font-size:1.2rem;
+
+  cursor:pointer;
+}
+
+</style>
+</head>
+<body>
+
+<!-- estrelas -->
+
+<div class="stars" id="stars"></div>
+
+<!-- hero -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1 class="title">
+      lalau & pedro 
+    </h1>
+
+    <p class="subtitle">
+      desde 02.03.2021 você é dona dos meus pensamentos,<br>
+      e pra ser sincero?<br>
+      eu odiaria não pensar em você!
+    </p>
+
+    <button class="main-btn" onclick="showLove()">
+      clique aqui se você é uma gatinha 🫣
+    </button>
+
+    <div id="loveMessage" style="margin-top:25px;font-size:1.2rem;"></div>
+
+    <!-- player -->
+
+    <div class="love-counter">
+
+  <h2>
+    nosso tempo juntos ⏳
+  </h2>
+
+  <p id="loveTimer">
+    carregando amor...
+  </p>
+
+</div>
+
+    <div class="music-player">
+
+      <div class="music-title" id="musicName">
+        🎵 Nights Like This
+      </div>
+
+      <div class="music-controls">
+        <button onclick="prevSong()">⏮</button>
+
+        <button id="playBtn" onclick="toggleMusic()">
+          ▶
+        </button>
+
+        <button onclick="nextSong()">⏭</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- quiz -->
+
+<section class="quiz-section">
+
+  <h2 class="section-title">
+    perguntinhas do milhão 💸
+  </h2>
+
+  <div class="quiz-box">
+
+    <h3 id="question">
+      carregando pergunta...
+    </h3>
+
+    <div class="quiz-buttons" id="answers">
+    </div>
+
+    <div id="quizResult"></div>
+
+  </div>
+
+</section>
+
+<img
+  id="victorySnoopy"
+  src="images/snoopy-nice.gif"
+>
+
+<img
+  id="failSnoopy"
+  src="images/snoopy-sad.gif"
+>
+
+<section class="love-message-section">
+
+  <img
+    src="images/love-snoopy.gif"
+    class="love-snoopy"
+  >
+
+  <img
+  id="topSnoopy"
+  src="images/snoopy-top.gif"
+>
+
+<img
+  id="sleepSnoopy"
+  src="images/snoopy-sleep.gif"
+>
+
+  <h2 id="typingText"></h2>
+
+</section>
+
+<!-- scrapbook -->
+<!-- scrapbook -->
+
+<section class="scrapbook">
+
+  <h2 class="section-title">
+    nosso muralzinho ♡
+  </h2>
+
+  <div class="scrapbook-wrapper">
+
+  <button class="scroll-btn left-btn" onclick="scrollPhotos(-1)">
+    ←
+  </button>
+
+  <div class="photos">
+
+    <div class="polaroid rotate-left">
+      <img src="images/minha-fav.jpg">
+
+      <div class="caption">
+        KKKKKKK minha fav fr 😹
+      </div>
+    </div>
+
+    <div class="polaroid rotate-right">
+      <img src="images/casalzao-da-porra.jpg">
+
+      <div class="caption">
+        casalzão!!! 👰🤵‍♂️
+      </div>
+    </div>
+
+    <div class="polaroid rotate-left">
+      <img src="images/pic-fav-dela.jpg">
+
+      <div class="caption">
+        pic fav dela 📸
+      </div>
+    </div>
+
+    <div class="polaroid rotate-right">
+      <img src="images/atrasados-para-o-shopps.jpg">
+
+      <div class="caption">
+        atrasados para o shopps 🤳
+      </div>
+    </div>
+
+    <div class="polaroid rotate-left">
+      <img src="images/bitoca-mwa.jpg">
+
+      <div class="caption">
+         bitoca mwa 💑
+      </div>
+    </div>
+
+    <div class="polaroid rotate-right">
+      <img src="images/metade-da-minha-mixirica.png">
+
+      <div class="caption">
+        metade da minha mixirica 🍊
+      </div>
+    </div>
+
+    <div class="polaroid rotate-left">
+      <img src="images/bitoca-anabolica.jpg">
+
+      <div class="caption">
+         bitoca anabólica 💪
+      </div>
+    </div>
+
+    <div class="polaroid rotate-right">
+      <img src="images/primeiro-treino-depois-de-meses.jpg">
+
+      <div class="caption">
+         primeiro treino depois de meses 🏋️‍♀️🏋️‍♂️
+      </div>
+    </div>
+
+    <div class="polaroid rotate-left">
+      <img src="images/felicidade-paz.png">
+
+      <div class="caption">
+         felicidade, paz 💆‍♂️
+      </div>
+    </div>
+
+    <div class="polaroid rotate-right">
+      <img src="images/bjin-no-cabelo.jpg">
+
+      <div class="caption">
+         bjin no cabelo 😘
+      </div>
+    </div>
+
+    <div class="polaroid rotate-left">
+      <img src="images/pos-pr-no-stiff.jpg">
+
+      <div class="caption">
+         pós pr no stiff 💪
+      </div>
+    </div>
+
+    <div class="polaroid rotate-right">
+      <img src="images/treino-com-a-camisa-do-ney-que-ela-gosta.jpg">
+
+      <div class="caption">
+         treino com a camisa do ney que ela escolheu ⚽
+      </div>
+    </div>
+
+    <div class="polaroid rotate-left">
+      <img src="images/cade-o-bebe.jpg">
+
+      <div class="caption">
+         cadê o bebê? 👶
+      </div>
+    </div>
+
+    <div class="polaroid rotate-right">
+      <img src="images/esperando-bk.png">
+
+      <div class="caption">
+         esperando o bk 🍟
+      </div>
+    </div>
+
+    <div class="polaroid rotate-left">
+      <img src="images/rolezin-no-centro.png">
+
+      <div class="caption">
+         rolezin no centro 🚶🚶‍♀️
+      </div>
+    </div>
+
+    <div class="polaroid rotate-right">
+      <img src="images/comprinhas-no-mercado.jpg">
+
+      <div class="caption">
+         comprinnhas no mercado 🛒
+      </div>
+    </div>
+
+    <div class="polaroid rotate-left">
+      <img src="images/sushzin.png">
+
+      <div class="caption">
+         sushzin 🍣
+      </div>
+    </div>
+
+    <div class="polaroid rotate-right">
+      <img src="images/caras-e-bocas.png">
+
+      <div class="caption">
+         caras e bocas 😝
+      </div>
+    </div>
+
+     <div class="polaroid rotate-left">
+      <img src="images/lavando-roupa-suja.jpg">
+
+      <div class="caption">
+         lavando roupa suja 🧺
+      </div>
+    </div>
+
+    <div class="polaroid rotate-right">
+      <img src="images/pos-treino.jpg">
+
+      <div class="caption">
+         pós treino 😴
+      </div>
+    </div>
+
+    <div class="polaroid rotate-right">
+      <img src="images/bico-e-breja.png">
+
+      <div class="caption">
+         bico e breja 🍻
+      </div>
+    </div>
+ 
+    <div class="polaroid rotate-left">
+      <img src="images/bico.jpg">
+
+      <div class="caption">
+         bico 💤
+      </div>
+    </div>
+
+    <div class="polaroid rotate-right">
+      <img src="images/together.jpg">
+
+      <div class="caption">
+         together! 💗
+      </div>
+    </div>
+
+    <div class="polaroid rotate-left">
+      <img src="images/omagaa.jpg">
+
+      <div class="caption">
+         omagaa 🙀
+      </div>
+    </div>
+
+
+    <div class="polaroid rotate-right">
+      <img src="images/realcam-detalhes.jpg">
+
+      <div class="caption">
+         realçam detalhes 🌻
+      </div>
+    </div>
+
+     <div class="polaroid rotate-left">
+      <img src="images/uber.jpg">
+
+      <div class="caption">
+         uber 🚗
+      </div>
+    </div>
+
+     <div class="polaroid rotate-right">
+      <img src="images/mascueicosssss.jpg">
+
+      <div class="caption">
+         mascueicosssss 🐒
+      </div>
+    </div>
+
+    <div class="polaroid rotate-left">
+      <img src="images/hipnotizante.png">
+
+      <div class="caption">
+         hipnotizante! 👀
+      </div>
+    </div>
+
+    <div class="polaroid rotate-right">
+      <img src="images/moooozin.png">
+
+      <div class="caption">
+         mooooozin 😻
+      </div>
+    </div>
+
+    <div class="polaroid rotate-left">
+      <img src="images/betinha-detectado-betinha-moggado.png">
+
+      <div class="caption">
+         betinha detectado, betinha moggado 🗿
+      </div>
+    </div>
+
+     <div class="polaroid rotate-right">
+      <img src="images/alo-globeleza.jpg">
+
+      <div class="caption">
+         alô vogue?
+      </div>
+    </div>
+
+     <div class="polaroid rotate-left">
+      <img src="images/alo-vogue.jpg">
+
+      <div class="caption">
+         alô globeleza?
+      </div>
+    </div>
+
+      <div class="polaroid rotate-right">
+      <img src="images/primeiro-dia-de-trampo-que-orgulho.jpg">
+
+      <div class="caption">
+         primeiro dia de trampo, meu orgulho!! 👩‍🏭
+      </div>
+    </div>
+
+         <div class="polaroid rotate-left">
+      <img src="images/minha-luz-fr.png">
+
+      <div class="caption">
+         minha luz 🌞
+      </div>
+    </div>
+
+  <div class="polaroid rotate-right">
+      <img src="images/pitirica.jpg">
+
+      <div class="caption">
+         pitirica!! 😹
+      </div>
+    </div>
+
+  <div class="polaroid rotate-left">
+      <img src="images/brabeza.jpg">
+
+      <div class="caption">
+         brabeza 😤
+      </div>
+    </div>
+
+     <div class="polaroid rotate-right">
+      <img src="images/simplesmente-e.png">
+
+      <div class="caption">
+         simplesmente é.
+      </div>
+    </div>
+    
+    
+   </div>
+
+
+  <button class="scroll-btn right-btn" onclick="scrollPhotos(1)">
+    →
+  </button>
+
+</div>
+
+</section>
+
+<!-- timeline -->
+
+<section class="timeline">
+
+  <h2 class="section-title">
+    nossa história 🌙
+  </h2>
+
+  <div class="timeline-container">
+
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <div class="timeline-date">02.03.2021</div>
+        <h3>posso cheirar seu cabelo?</h3>
+        <p>
+          amozin a gente mal sabia  que uma cheirada de cabelo mudaria tudo.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <div class="timeline-date">11.06.2024</div>
+        <h3>o universo trouxe você de volta</h3>
+        <p>
+          e eu agradeço por isso todos os dias.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <div class="timeline-date">08.12</div>
+        <h3>namoro sim ou não?</h3>
+        <p>
+          oficialmente minha chatice aguda, minha pessoa favorita no universo. obrigado por completar a metade da minha mixirica!
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <div class="timeline-date">20.07.2025</div>
+        <h3>primeiro encontro + primeira bitoca</h3>
+        <p>
+          aqui eu percebi que, de fato, você é o amor da minha vida. e que eu estava e sempre vou ser completamente MALUCO por você.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- nasa -->
+
+<!-- nasa memories -->
+
+<section class="nasa-section">
+
+  <h2 class="section-title">
+    o universo naquele momento 🌌
+  </h2>
+
+ <div class="nasa-buttons">
+
+  <button onclick="goHome()">
+  💫 nosso universo
+</button>
+
+
+<button onclick="loadCustomImage(
+'nasa/spica.jpg',
+
+'o dia em que nos conhecemos ♡',
+
+'amozin, nessa noite a lua apareceu próxima de spica. spica é considerada uma estrela ligada ao brilho, intuição e destino. talvez o universo estivesse tentando me avisar que você mudaria minha vida.'
+)">
+    02.03.2021
+      
+  </button>
+
+  <button onclick="loadCustomImage(
+'nasa/rho-antares-ic4605.jpg',
+
+'quando o universo trouxe você de volta ✨',
+
+'mozi, se você perceber algumas estrelas e planetas parecem desaparecer por um tempo, mas sempre continuam brilhando em algum ponto do universo. talvez te encontrar tenha sido exatamente sobre isso 😁.'
+)">
+    11.06.2024
+
+  </button>
+
+  <button onclick="loadCustomImage(
+'nasa/saturn-pole.jpg',
+
+'nosso namoro 💍',
+
+'desde esse dia (talvez antes), você mudou completamente minha visão de mundo, família, amor e crença. obrigado por ser quem você é, obrigado pela compreensão e força. obrigado por todo carinho. obrigado por me fazer enxergar com clareza quem eu verdadeiramente sou, obrigado por acridatar em mim. eu te amo!<br>ps: gatinha, nesse dia em específico a nasa tirou esse fotão do polo de saturno. pode não ter significado profundo e coisas do tipo, MAS, eu vejo que: <br>até mesmo quando você é distante e meio gelado das ideias, a pessoa certa pode te fazer enxergar as coisas de formas diferentes.'
+)">
+  08.12.2024
+</button>
+
+  <button onclick="loadCustomImage(
+  'nasa/lunar.jpg',
+
+  'nossa primeira bitoca 💋',
+
+  'naquela noite, como diz zezé di camargo & luciano: a lua sabe que eu me apaixonei, as noites sabem como eu te esperei. mas, sinceramente, ao contrário deles, eu conto pra todo mundo ><.'
+  )">
+  
+
+
+
+    20.07.2025
+  </button>
+
+  <button onclick="loadCustomImage(
+  'nasa/nebulosa.jpg',
+
+  'nosso primeiro sushi 🍣',
+
+  'amor, nebulosas representam criação, nascimento e transformação. acreidto que talvez por ser apenas um simples sushi em sua companhia, tenha virado uma das minhas memórias (nascidas, criadas e transformadas) favoritas com você. sempre vou me lembrar desse dia com muito carinho, foi nosso primeiro date KKKKKKKK (lietralmente) <br>nosso primeiro sushi, priemiro de MUITOS que ainda estão por vir. </br>'
+  )">
+    22.07.2025
+  </button>
+
+  <button onclick="loadCustomImage(
+  'nasa/einstein-cross.jpg',
+
+  'nosso reencontro 🌙',
+
+  'gatinha, bizarro como a cruz de einstein (um quasar localizado na constelação de pegasus) mostra a mesma luz chegando por caminhos diferentes. kk engraçado como isso lembra a gente: mesmo depois do tempo (praticamente 5 anos), a vida encontrou um jeito de cruzar nossos caminhos de novo. e pra ser sincero, eu já sabia. te reencontrar foi a melhor coisa que me aconteceu. poder viver experiências únicas com você revivem meu espírito.'
+  )">
+    04.01.2026
+  </button>
+
+</div>
+
+  <div class="nasa-card">
+
+    <img id="nasaImage">
+
+    <div class="nasa-content">
+
+      <h2 id="memoryTitle"></h2>
+
+      <h3 id="nasaTitle"></h3>
+
+      <p id="nasaDescription"></p>
+
+      <div id="spaceMeaning"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<button id="openAlbumBtn" class="album-button">
+  álbum de figuras licenciado 👈📖
+</button>
+
+
+<!-- footer -->
+
+<section class="footer">
+
+  <h2>
+    em qualquer universo,
+    eu escolheria você.
+  </h2>
+
+  <p>
+    com amor,<br>
+    pedro mixirica ♡
+  </p>
+
+</section>
+
+<!-- áudio -->
+
+<img
+  id="snoopyDance"
+  src="images/snoopy-dance.gif"
+>
+
+<img
+  id="snoopyDanceLeft"
+  src="images/snoopy-dance2.gif"
+>
+
+<audio id="audio"></audio>
+
+<script>
+
+/* estrelas */
+
+const stars = document.getElementById("stars");
+
+for(let i=0; i<120; i++){
+
+  const star = document.createElement("div");
+
+  star.classList.add("star");
+
+  star.style.left = Math.random() * 100 + "%";
+  star.style.top = Math.random() * 100 + "%";
+
+  star.style.animationDelay = Math.random() * 5 + "s";
+
+  stars.appendChild(star);
+
+}
+
+/* botão */
+
+function showLove(){
+
+  document
+  .getElementById("secretPopup")
+  .classList.add("show");
+
+}
+
+function acceptLove(){
+
+  document
+  .getElementById("secretPopup")
+  .classList.remove("show");
+
+  document.getElementById("loveMessage").innerHTML =
+  "acesso autorizado pra você gatinha 😼";
+
+}
+
+function denyLove(){
+
+  document
+  .getElementById("secretPopup")
+  .classList.remove("show");
+
+  document.getElementById("loveMessage").innerHTML =
+  "🚫 identidade de ze porva detectada.";
+
+} 
+
+/* músicas */
+
+/* músicas */
+
+const songs = [
+
+  {
+    name:"Nights Like This — The Kid Laroi",
+    src:"songs/nights-like-this.mp3"
+  },
+
+  {
+    name:"Flaws And Sins — Juice WRLD",
+    src:"songs/flaws-and-sins.mp3"
+  },
+
+  {
+    name:"Hear Me Calling — Juice WRLD",
+    src:"songs/hear-me-calling.mp3"
+  },
+
+  {
+    name:"Life's A Mess — Juice WRLD",
+    src:"songs/lifes-a-mess.mp3"
+  },
+
+  {
+    name:"Lugar Ao Sol — Charlie Brown Jr",
+    src:"songs/lugar-ao-sol.mp3"
+  },
+
+  {
+    name:"Me Encontra — Charlie Brown Jr",
+    src:"songs/me-encontra.mp3"
+  },
+
+  {
+    name:"Mineirinho — Só Pra Contrariar",
+    src:"songs/mineirinho.mp3"
+  },
+
+  {
+    name:"Fico Assim Sem Você — Claudinho e Buchecha",
+    src:"songs/fico-assim-sem-voce.mp3"
+  },
+
+  {
+    name:"Chicletinho — Marcela Jardim",
+    src:"songs/chicletinho.mp3"
+  },
+
+  {
+    name:"Meu Anjinho — Pequeno Cidadão",
+    src:"songs/meu-anjinho.mp3"
+  }
+
+];
+
+let currentSong = 0;
+
+const audio = document.getElementById("audio");
+
+function loadSong(){
+
+  audio.src = songs[currentSong].src;
+
+  document.getElementById("musicName").innerHTML =
+  "🎵 " + songs[currentSong].name;
+
+}
+
+loadSong();
+
+function toggleMusic(){
+
+  const playBtn =
+  document.getElementById("playBtn");
+
+  if(audio.paused){
+
+    audio.play();
+
+    playBtn.innerHTML = "❚❚";
+
+    snoopyDance.style.opacity = "1";
+    snoopyDanceLeft.style.opacity = "1";
+
+    startTyping();
+
+  }else{
+
+    audio.pause();
+
+    playBtn.innerHTML = "▶";
+
+    snoopyDance.style.opacity = "0";
+    snoopyDanceLeft.style.opacity = "0";
+
+    stopTyping();
+
+  }
+
+}
+
+function nextSong(){
+
+  currentSong++;
+
+  if(currentSong >= songs.length){
+    currentSong = 0;
+  }
+
+  loadSong();
+
+  audio.play();
+
+  document.getElementById("playBtn").innerHTML = "❚❚";
+
+  snoopyDance.style.opacity = "1";
+  snoopyDanceLeft.style.opacity = "1";
+
+  stopTyping();
+  startTyping();
+
+}
+
+function prevSong(){
+
+  currentSong--;
+
+  if(currentSong < 0){
+    currentSong = songs.length - 1;
+  }
+
+  loadSong();
+
+  audio.play();
+
+  document.getElementById("playBtn").innerHTML = "❚❚";
+
+  snoopyDance.style.opacity = "1";
+  snoopyDanceLeft.style.opacity = "1";
+
+  stopTyping();
+  startTyping();
+
+}
+
+/* NASA */
+
+/* NASA */
+
+async function loadNASA(date, memory){
+
+  const response = await fetch(
+    `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`
+  );
+
+  const data = await response.json();
+
+const nasaImage = document.getElementById("nasaImage");
+
+if(data.media_type === "image"){
+
+  nasaImage.src = data.hdurl || data.url;
+
+}else{
+
+  nasaImage.src =
+  "https://images-assets.nasa.gov/image/PIA12235/PIA12235~orig.jpg";
+
+}
+
+document.getElementById("memoryTitle").innerHTML =
+memory;
+
+document.getElementById("nasaTitle").innerHTML =
+data.title || "universo misterioso 🌌";
+
+document.getElementById("nasaDescription").innerHTML =
+data.explanation || "o universo tava ocupado sendo lindo nesse dia.";
+
+}
+
+function loadCustomImage(image, memory, meaning){
+
+  document.getElementById("nasaImage").src =
+  image;
+
+  document.getElementById("memoryTitle").innerHTML =
+  memory;
+
+  document.getElementById("nasaTitle").innerHTML =
+  "nosso universo ✨";
+
+  document.getElementById("nasaDescription").innerHTML =
+  "";
+
+  document.getElementById("spaceMeaning").innerHTML =
+  meaning;
+
+}
+
+function goHome(){
+
+  document.getElementById("nasaImage").onerror = null;
+
+  document.getElementById("nasaImage").src =
+  "nasa/snoopy-space.jpg";
+
+  document.getElementById("memoryTitle").innerHTML =
+  "nosso universo ✨";
+
+  document.getElementById("nasaTitle").innerHTML =
+  "cada estrela daqui me lembra você";
+
+  document.getElementById("nasaDescription").innerHTML =
+  "";
+
+  document.getElementById("spaceMeaning").innerHTML =
+  "obrigado por transformar completamente o meu universo.";
+
+}
+
+
+/* tela inicial */
+
+document.getElementById("nasaImage").src =
+"nasa/snoopy-space.jpg";
+
+document.getElementById("memoryTitle").innerHTML =
+"nosso universo ✨";
+
+document.getElementById("nasaTitle").innerHTML =
+"cada estrela daqui me lembra você";
+
+document.getElementById("nasaDescription").innerHTML =
+"";
+
+document.getElementById("spaceMeaning").innerHTML =
+"obrigado por transformar completamente o meu universo.";
+
+const photos = document.querySelector(".photos");
+
+function scrollPhotos(direction){
+
+  const scrollAmount = 900;
+
+  photos.scrollBy({
+    left: direction * scrollAmount,
+    behavior: "smooth"
+  });
+
+}
+
+audio.addEventListener("ended", () => {
+
+  document.getElementById("playBtn").innerHTML = "▶";
+
+  document
+    .getElementById("snoopyDance")
+    .classList.remove("show");
+
+});
+
+
+const text =
+"feliz dia dos namorados!! te amo pra sempre gatinha <3";
+
+const typingText =
+document.getElementById("typingText");
+
+let typingIndex = 0;
+
+let deleting = false;
+
+let typingTimeout;
+
+function typeLoop(){
+
+  if(audio.paused){
+    return;
+  }
+
+  if(!deleting){
+
+    typingText.innerHTML =
+    text.substring(0, typingIndex);
+
+    typingIndex++;
+
+    if(typingIndex > text.length){
+
+      deleting = true;
+
+      typingTimeout = setTimeout(typeLoop, 900);
+
+      return;
+
+    }
+
+  }else{
+
+    typingText.innerHTML =
+    text.substring(0, typingIndex);
+
+    typingIndex--;
+
+    if(typingIndex < 0){
+
+      deleting = false;
+
+      typingIndex = 0;
+
+    }
+
+  }
+
+  typingTimeout = setTimeout(typeLoop, 45);
+
+}
+
+function startTyping(){
+
+  clearTimeout(typingTimeout);
+
+  typeLoop();
+
+}
+
+function stopTyping(){
+
+  clearTimeout(typingTimeout);
+
+  typingText.innerHTML = "";
+
+}
+
+audio.addEventListener("ended", () => {
+
+  document.getElementById("playBtn").innerHTML = "▶";
+
+  snoopyDance.style.opacity = "0";
+  snoopyDanceLeft.style.opacity = "0";
+
+  stopTyping();
+
+});
+
+const quizData = [
+
+  {
+    question:"quem é a mais gatinha do universo? (só há uma resposta válida)",
+    answers:[
+      "lauanda 😼",
+      "lauanda 😼",
+      "lauanda 😼", 
+      "lauanda 😼"
+    ],
+    correct:[0,1,2,3,4]
+  },
+
+  {
+    question:"quem é o mais chato do mundo?",
+    answers:[
+      "pedro The Chatonildo",
+      "maria joaquina",
+      "fã de kpop",
+      "fã de rap underground"
+    ],
+    correct:0
+  },
+
+  {
+    question:"qual nossa data especial?",
+    answers:[
+      "08.12",
+      "04.01",
+      "20.07",
+      "11.11"
+    ],
+    correct:0
+  }
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+const questionEl =
+document.getElementById("question");
+
+const answersEl =
+document.getElementById("answers");
+
+const resultEl =
+document.getElementById("quizResult");
+
+function loadQuestion(){
+
+  const q = quizData[currentQuestion];
+
+  questionEl.innerHTML = q.question;
+
+  answersEl.innerHTML = "";
+
+  q.answers.forEach((answer,index)=>{
+
+    const button =
+    document.createElement("button");
+
+    button.innerHTML = answer;
+
+    button.onclick = ()=> checkAnswer(index);
+
+    answersEl.appendChild(button);
+
+  });
+
+}
+
+function checkAnswer(index){
+
+  const correctAnswer =
+  quizData[currentQuestion].correct;
+
+  if(Array.isArray(correctAnswer)){
+
+    if(correctAnswer.includes(index)){
+      score++;
+    }
+
+  }else{
+
+    if(index === correctAnswer){
+      score++;
+    }
+
+  }
+
+  currentQuestion++;
+
+  if(currentQuestion < quizData.length){
+
+    loadQuestion();
+
+  }else{
+
+    showResult();
+
+  }
+
+}
+
+function showResult(){
+
+  questionEl.innerHTML =
+  "quiz finalizado ✍️";
+
+  answersEl.innerHTML = ""; 
+
+  resultEl.innerHTML =
+  `você acertou ${score} de ${quizData.length} perguntas ‼️`;
+
+  if(score >= 2){
+
+    const victorySnoopy =
+    document.getElementById("victorySnoopy");
+
+    victorySnoopy.classList.add("show");
+
+    setTimeout(()=>{
+
+      victorySnoopy.classList.remove("show");
+
+    }, 2000);
+
+    resultEl.innerHTML +=
+    "<br><br>parabéns pra maior big braing do nosso universo 🧠🤓";
+
+  }else{
+
+    const failSnoopy =
+    document.getElementById("failSnoopy");
+
+    failSnoopy.classList.add("show");
+
+    setTimeout(()=>{
+
+      failSnoopy.classList.remove("show");
+
+    }, 2000);
+
+    resultEl.innerHTML +=
+    "<br><br> aaaamozin como assim você ERROU isso? 😿😿😿";
+
+  }
+
+}
+
+loadQuestion();
+
+const startDate =
+new Date("2024-12-08T00:00:00");
+function updateLoveTimer(){
+
+  const now = new Date();
+
+  const diff =
+  now - startDate;
+
+  const days =
+  Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  const hours =
+  Math.floor(
+    (diff / (1000 * 60 * 60)) % 24
+  );
+
+  const minutes =
+  Math.floor(
+    (diff / (1000 * 60)) % 60
+  );
+
+  const seconds =
+  Math.floor(
+    (diff / 1000) % 60
+  );
+
+  document.getElementById(
+    "loveTimer"
+  ).innerHTML =
+
+  `${days} dias 💖
+  ${hours} horas 🌙
+  ${minutes} minutos ✨
+  ${seconds} segundos`;
+
+}
+
+setInterval(updateLoveTimer,1000);
+
+updateLoveTimer();
+
+</script>
+
+<div id="secretPopup" class="popup-overlay">
+
+  <div class="popup-box">
+
+    <h2>
+      ⚠ AVISO DE SEGURANÇA ⚠
+    </h2>
+
+    <p>
+      Se você <b>NÃO</b> for Lauanda da Silva Almeida,
+      você não deveria ter acesso a esse tipo de arquivo.
+    </p>
+
+    <br>
+
+    <p>Esse conteúdo possui:</p>
+
+    <ul>
+      <li>Altos níveis de romance</li>
+      <li>Informações confidenciais</li>
+      <li><b>EXCESSO</b> de romance e carinho</li>
+      <li>Arquivos secretos de casal</li>
+    </ul>
+
+    <br>
+
+    <p>
+      Ao prosseguir, você confirma que:
+    </p>
+
+    <ul>
+      <li>É a própria Lauanda (Lalau Catatau 🍯)</li>
+      <li>Possui condições emocionais / psicológicas / física e (outros)</li>
+      <li>Aguenta níveis <b>PERIGOSOS</b> de romance e carin</li>
+    </ul>
+
+    <div class="popup-buttons">
+
+      <button onclick="acceptLove()"> 
+        LALAU CATATAU 💖
+      </button>
+
+      <button onclick="denyLove()">
+        XERETA ZÉ PORVA🚫
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div id="albumOverlay" class="album-overlay">
+
+  <div class="album-content">
+
+    <button id="closeAlbum" class="close-album">
+      ✕
+    </button>
+
+    <h2>
+      us us us us us us us! >ᴗ<
+    </h2>
+
+    <p>
+     amooooozin us in anotehr universe 🧑‍❤️‍💋‍👩
+    </p>
+
+    <div class="album-grid">
+
+      <div class="album-photo">
+        <img src="images/dog1.gif">
+      </div>
+
+       <div class="album-photo">
+        <img src="images/cats-nights.gif">
+      </div>
+
+            <div class="album-photo">
+        <img src="images/gifdog2.gif">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/gifdog'.gif">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/garfield.gif">
+      </div>
+      
+      <div class="album-photo">
+        <img src="images/garfield2.gif">
+      </div>
+
+     <div class="album-photo">
+        <img src="images/garfield3.gif">
+      </div>
+
+       <div class="album-photo">
+        <img src="images/gifdog4.gif">
+      </div>
+
+        <div class="album-photo">
+        <img src="images/gifdog5.gif">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/dog4.gif">
+      </div>
+
+             <div class="album-photo">
+        <img src="images/gifdog6.gif">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/focagif.gif">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/ratgif.gif">
+      </div>
+      
+      
+      <div class="album-photo">
+        <img src="images/dog2.jpg">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/dog3.jpg">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/dog5.jpg">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/dog6.jpg">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/dog8.jpg">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/dog9.jpg">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/dog10.jpg">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/dog11.jpg">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/dog12.jpg">
+      </div>
+
+      <div class="album-photo">
+        <img src="images/dog13.jpg">
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<audio id="albumMusic" loop playsinline>
+  <source src="songs/Milky - Just The Way You Are (sub. español + lyrics)  Pibble Song - Marinosaurio (youtube).mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+const albumBtn =
+document.getElementById("openAlbumBtn");
+
+const albumOverlay =
+document.getElementById("albumOverlay");
+
+const closeAlbum =
+document.getElementById("closeAlbum");
+
+const albumMusic =
+document.getElementById("albumMusic");
+
+albumBtn.addEventListener("click", async ()=>{
+
+  /* abre álbum */
+  albumOverlay.classList.add("show");
+
+  /* pausa música principal */
+  audio.pause();
+
+  document
+  .getElementById("playBtn")
+  .innerHTML = "▶";
+
+  snoopyDance.style.opacity = "0";
+  snoopyDanceLeft.style.opacity = "0";
+
+  /* força música do álbum */
+  try{
+
+    albumMusic.currentTime = 0;
+
+    await albumMusic.play();
+
+  }catch(err){
+
+    console.log(err);
+
+  }
+
+});
+
+closeAlbum.addEventListener("click",()=>{
+
+  /* fecha álbum */
+  albumOverlay
+  .classList.remove("show");
+
+  /* para música do álbum */
+  albumMusic.pause();
+
+  albumMusic.currentTime = 0;
+
+});
+
+</script>
+
+</body>
+</html> 
